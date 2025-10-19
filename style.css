@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+
+
+    background: url("./assets/chainsaw-man-pictures-8nheiun4giwnu5du.jpg");
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+
+
+}
+
+.Container {
+
+    width: 350px;
+    height: 230px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+
+
+
+
+
+
+}
+
+header {
+    position: absolute;
+    /* fixa o header no topo */
+    top: 50px;
+    /* distância do topo da tela */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    /* centraliza o texto */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    /* tamanho da fonte */
+    text-transform: uppercase;
+    /* deixa tudo em maiúsculas */
+    letter-spacing: 2px;
+    /* espaço entre letras */
+    text-shadow: 2px 2px 5px black;
+    /* brilho escuro por trás */
+
+
+    color: #fff;
+    text-shadow: 0 0 10px #00f;
+    animation: brilhar 1.5s infinite alternate;
+}
+
+@keyframes brilhar {
+    from {
+        text-shadow: 0 0 5px #00f;
+    }
+
+    to {
+        text-shadow: 0 0 20px #00f;
+    }
+}
+
+button {
+
+    padding: 10px;
+    font-size: 50px;
+    margin-left: 6px;
+    cursor: pointer;
+
+}
+
+
+
+h2 {
+
+    margin-bottom: 14px;
+    color: #fff;
+    text-shadow: 0 0 10px #00f;
+    animation: brilhar 1.5s infinite alternate;
+
+
+}
+
+.your-score {
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+
+}
+
+.footer-paragraph {
+
+
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    pointer-events: none;
+    /* não interfere com cliques */
+    opacity: 0.85;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    color: #fff;
+    text-shadow: 0 0 10px #00f;
+    animation: brilhar 1.5s infinite alternate;
+        letter-spacing: 2px;
+
+}
+
+.footer-paragraph:hover {
+    opacity: 3;
+}
+
+.footer-paragraph span {
+    font-weight: 900;
+    color: #f2f2f2;
+}
