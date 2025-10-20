@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JokenPô - Chainsaw Man</title>
     <link rel="stylesheet" href="./style.css">
-    <title>JokenPô</title>
 </head>
 
 <body>
+    <!-- ==========================
+         CABEÇALHO
+    =========================== -->
     <header>
-        <h1> chainsaw man </h1>
+        <h1>Chainsaw Man</h1>
     </header>
-    <div class="Container">
+
+    <!-- ==========================
+         CONTAINER PRINCIPAL
+    =========================== -->
+    <main class="Container">
 
         <h2>JokenPô</h2>
+
+        <!-- Grupo de botões -->
         <div class="buttons">
-            <button id="rock">&#9994;&#127997;</button>
-            <button id="paper">&#x1F590;&#x1F3FD; </button>
-            <button id="scissors">&#x270C;&#x1F3FC; </button>
+            <button id="rock" onclick="playHuman('rock')" title="Pedra">&#9994;&#127997;</button>
+            <button id="paper" onclick="playHuman('paper')" title="Papel">&#x1F590;&#x1F3FD;</button>
+            <button id="scissors" onclick="playHuman('scissors')" title="Tesoura">&#x270C;&#x1F3FC;</button>
         </div>
 
-        <p class="your-score"> Sua pontuação: <span>0<span></p>
+        <!-- Mensagem dinâmica do resultado (inserida via JS) -->
+        <!-- <p class="result-message">Você venceu! 🏆</p> -->
 
-        <p class="marchine-score"> Sua pontuação da Alexa: <span>0<span></p>
+        <!-- Placar -->
+        <p class="your-score">Sua pontuação: <span class="value-your">0</span></p>
+        <p class="machine-score">Pontuação da Alexa: <span class="value-marchine">0</span></p>
 
+        <!-- Botão opcional para reiniciar (poderá ser ativado no futuro) -->
+        <!-- <button class="reset-btn" onclick="resetGame()">Reiniciar</button> -->
 
+    </main>
 
+    <!-- ==========================
+         RODAPÉ
+    =========================== -->
+    <footer>
+        <p class="footer-paragraph">
+            Desenvolvido por: <br>
+            <span>André Oliveira</span>
+        </p>
+    </footer>
 
-
-    </div>
-
-
-        <footer>
-
-            <p class="footer-paragraph">Desenvolvido por: 
-                <br> 
-                    <span>André Oliveira<span>
-                </br>
-            </p>
-
-        </footer>
-
+    <!-- ==========================
+         SCRIPT DO JOGO
+    =========================== -->
+    <script src="./script.js"></script>
 </body>
-
 </html>

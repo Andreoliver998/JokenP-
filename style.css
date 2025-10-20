@@ -1,139 +1,226 @@
+/* ==============================================
+   ESTILOS GERAIS
+   Desenvolvido por: André Oliveira
+   Projeto: JokenPô - Chainsaw Man Edition
+   ============================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
+/* ==============================
+   FUNDO E CONFIGURAÇÃO BASE
+============================== */
 body {
-
-
-
-    background: url("./assets/chainsaw-man-pictures-8nheiun4giwnu5du.jpg");
+    background: url("./assets/chainsaw-man-pictures-8nheiun4giwnu5du.jpg") no-repeat center center fixed;
     background-size: cover;
-
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-
-
-
 }
 
+/* ==============================
+   CONTAINER PRINCIPAL
+============================== */
 .Container {
-
-    width: 350px;
-    height: 230px;
-    background: rgba(255, 255, 255, 0.2);
+    width: 420px;
+    min-height: 320px;
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
     display: flex;
+    flex-direction: column;
     justify-content: center;
-
-
-
-
-
-
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+    padding: 25px;
 }
 
+/* ==============================
+   CABEÇALHO
+============================== */
 header {
     position: absolute;
-    /* fixa o header no topo */
-    top: 50px;
-    /* distância do topo da tela */
+    top: 40px;
     left: 0;
     width: 100%;
     text-align: center;
-    /* centraliza o texto */
 }
 
 header h1 {
-    font-size: 2.5rem;
-    /* tamanho da fonte */
+    font-size: 2.6rem;
     text-transform: uppercase;
-    /* deixa tudo em maiúsculas */
-    letter-spacing: 2px;
-    /* espaço entre letras */
-    text-shadow: 2px 2px 5px black;
-    /* brilho escuro por trás */
-
-
     color: #fff;
+    letter-spacing: 3px;
+    text-shadow: 0 0 12px #00f, 0 0 25px #00f, 0 0 40px #00f;
+    animation: brilhar 1.5s infinite alternate;
+}
+
+/* ==============================
+   TÍTULO PRINCIPAL DO JOGO
+============================== */
+h2 {
+    font-size: 2rem;
+    color: #00bfff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 8px #00bfff,
+        0 0 20px #0099ff,
+        0 0 40px #0077ff,
+        0 0 80px #0055ff;
+    animation: neonPulse 1.8s infinite alternate;
+}
+
+/* ==============================
+   BOTÕES DO JOGO
+============================== */
+.buttons {
+    display: flex;
+    gap: 35px;
+}
+
+button {
+    padding: 10px;
+    font-size: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ----- Pedra ----- */
+#rock {
+    background-color: #E74C3C;
+}
+#rock:hover {
+    background-color: #C0392B;
+    transform: scale(1.08);
+}
+
+/* ----- Papel ----- */
+#paper {
+    background-color: #3498DB;
+}
+#paper:hover {
+    background-color: #21618C;
+    transform: scale(1.08);
+}
+
+/* ----- Tesoura ----- */
+#scissors {
+    background-color: #F1C40F;
+    color: #2C3E50;
+}
+#scissors:hover {
+    background-color: #D4AC0D;
+    transform: scale(1.08);
+}
+
+/* ==============================
+   PLACAR
+============================== */
+.your-score,
+.machine-score {
+    color: #fff;
+    font-size: 1.3rem;
     text-shadow: 0 0 10px #00f;
     animation: brilhar 1.5s infinite alternate;
 }
 
+.value-your {
+    color: #E74C3C;
+    font-weight: bold;
+}
+
+.value-marchine {
+    color: #3498DB;
+    font-weight: bold;
+}
+
+/* ==============================
+   MENSAGEM DO RESULTADO
+============================== */
+.result-message {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* ==============================
+   BOTÃO DE REINICIAR (opcional)
+============================== */
+.reset-btn {
+    margin-top: 10px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    background-color: #0077ff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.reset-btn:hover {
+    background-color: #0055cc;
+    transform: scale(1.05);
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+footer {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    color: #fff;
+}
+
+.footer-paragraph {
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #00f;
+    animation: brilhar 1.5s infinite alternate;
+    letter-spacing: 1px;
+}
+
+.footer-paragraph span {
+    font-weight: bold;
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfff;
+}
+
+/* ==============================
+   ANIMAÇÕES DE EFEITO NEON
+============================== */
 @keyframes brilhar {
     from {
-        text-shadow: 0 0 5px #00f;
+        text-shadow: 0 0 10px #00f;
     }
-
     to {
         text-shadow: 0 0 20px #00f;
     }
 }
 
-button {
-
-    padding: 10px;
-    font-size: 50px;
-    margin-left: 6px;
-    cursor: pointer;
-
-}
-
-
-
-h2 {
-
-    margin-bottom: 14px;
-    color: #fff;
-    text-shadow: 0 0 10px #00f;
-    animation: brilhar 1.5s infinite alternate;
-
-
-}
-
-.your-score {
-
-    margin-top: 20px;
-    margin-bottom: 10px;
-
-
-}
-
-.footer-paragraph {
-
-
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-    font-size: 30px;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    user-select: none;
-    pointer-events: none;
-    /* não interfere com cliques */
-    opacity: 0.85;
-    z-index: 1000;
-    transition: opacity 0.3s ease;
-    color: #fff;
-    text-shadow: 0 0 10px #00f;
-    animation: brilhar 1.5s infinite alternate;
-        letter-spacing: 2px;
-
-}
-
-.footer-paragraph:hover {
-    opacity: 3;
-}
-
-.footer-paragraph span {
-    font-weight: 900;
-    color: #f2f2f2;
+@keyframes neonPulse {
+    from {
+        text-shadow:
+            0 0 10px #00bfff,
+            0 0 30px #0099ff,
+            0 0 60px #0077ff;
+    }
+    to {
+        text-shadow:
+            0 0 20px #00ccff,
+            0 0 40px #00aaff,
+            0 0 90px #0077ff;
+    }
 }
